@@ -1,0 +1,27 @@
+# Sensitive files
+.env
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+
+# Data Base
+db.sqlite3
+
+# IDEs
+.idea
+.vscode
+
+# Virtualenv
+.venv
+
+# Folders
+media
+htmlcov/*
+*/migrations
+
+# Files
+# drawio backup file
+.$*
