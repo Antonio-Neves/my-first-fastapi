@@ -23,4 +23,3 @@ def get_db():
 @app.get("/")
 async def read_all(db: Annotated[Session, Depends(get_db)]):
     return db.query(Todos).all()
-
