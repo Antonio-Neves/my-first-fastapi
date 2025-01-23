@@ -8,18 +8,16 @@
 __pycache__
 
 # Data Base
-db.sqlite3
+*.db
 
 # IDEs
 .idea
-.vscode
 
 # Virtualenv
 .venv
 
 # Folders
 media
-htmlcov/*
 */migrations
 
 # Files
