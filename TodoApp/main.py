@@ -2,13 +2,13 @@ from fastapi import FastAPI, Depends
 from database import engine, SessionLocal
 from typing import Annotated
 from sqlalchemy.orm import Session
-from database import Base
+import models
 from models import Todos
 
 
 app = FastAPI()
 
-Base.metadata.create_all(bind=engine)
+models.Base.metadata.create_all(bind=engine)
 
 
 def get_db():
@@ -19,7 +19,8 @@ def get_db():
     finally:
         db.close()
 
+db_dependecy = Annotated[Session, Depends(get_db)]
 
 @app.get("/")
-async def read_all(db: Annotated[Session, Depends(get_db)]):
+async def read_all(db: db_dependecy):
     return db.query(Todos).all()
